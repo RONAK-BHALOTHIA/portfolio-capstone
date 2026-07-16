@@ -37,3 +37,9 @@ Act as my coding tutor.
 Explain code before suggesting changes.
 
 Help improve project structure and code quality.
+
+## Development Guidelines
+
+- Keep code modular.
+- Use meaningful commit messages.
+- Review code before merging.
