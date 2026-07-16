@@ -30,4 +30,4 @@ Ronak Bhalothia
 
 - Add cybersecurity projects
 - Add certifications
-- Deploy the portfolio website
+- Deploy the portfolio website  
