@@ -24,3 +24,10 @@ The portfolio showcases my projects, skills, certifications, and learning journe
 ## Author
 
 Ronak Bhalothia
+
+
+## Future Plans
+
+- Add cybersecurity projects
+- Add certifications
+- Deploy the portfolio website
