@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio settings — manage your profile and appearance preferences.">
+  <title>Settings | Portfolio Capstone</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    (function () {
+      try {
+        var raw = localStorage.getItem("portfolioSettings");
+        var theme = raw ? JSON.parse(raw).theme : "system";
+        document.documentElement.dataset.theme = theme || "system";
+      } catch (error) {
+        document.documentElement.dataset.theme = "system";
+      }
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#settings-form">Skip to settings form</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <p class="site-header__brand">Portfolio Capstone</p>
+      <nav aria-label="Primary">
+        <ul class="site-nav">
+          <li><a href="settings.html" aria-current="page">Settings</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-main">
+    <header class="page-header">
+      <h1>Settings</h1>
+      <p class="page-header__lead">Update your profile details and choose how the site looks.</p>
+    </header>
+
+    <div
+      id="status-message"
+      class="status-message"
+      role="status"
+      aria-live="polite"
+      hidden
+    ></div>
+
+    <form id="settings-form" class="settings-form" novalidate>
+      <section class="settings-section" aria-labelledby="profile-heading">
+        <h2 id="profile-heading">Profile</h2>
+
+        <div class="form-field">
+          <label for="name">Name <span class="required-indicator" aria-hidden="true">*</span></label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            autocomplete="name"
+            required
+            aria-required="true"
+            aria-describedby="name-error"
+          >
+          <p id="name-error" class="field-error" role="alert"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email <span class="required-indicator" aria-hidden="true">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            inputmode="email"
+            required
+            aria-required="true"
+            aria-describedby="email-error"
+          >
+          <p id="email-error" class="field-error" role="alert"></p>
+        </div>
+      </section>
+
+      <section class="settings-section" aria-labelledby="security-heading">
+        <h2 id="security-heading">Security</h2>
+        <p class="section-note">Leave password fields blank to keep your current password unchanged.</p>
+
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            autocomplete="new-password"
+            minlength="8"
+            aria-describedby="password-hint password-error"
+          >
+          <p id="password-hint" class="field-hint">Minimum 8 characters when changing your password.</p>
+          <p id="password-error" class="field-error" role="alert"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="confirm-password">Confirm password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirmPassword"
+            autocomplete="new-password"
+            aria-describedby="confirm-password-error"
+          >
+          <p id="confirm-password-error" class="field-error" role="alert"></p>
+        </div>
+      </section>
+
+      <section class="settings-section" aria-labelledby="appearance-heading">
+        <h2 id="appearance-heading">Appearance</h2>
+
+        <fieldset class="theme-fieldset">
+          <legend>Theme</legend>
+          <div class="theme-options">
+            <div class="theme-option">
+              <input type="radio" id="theme-light" name="theme" value="light">
+              <label for="theme-light">Light</label>
+            </div>
+            <div class="theme-option">
+              <input type="radio" id="theme-dark" name="theme" value="dark">
+              <label for="theme-dark">Dark</label>
+            </div>
+            <div class="theme-option">
+              <input type="radio" id="theme-system" name="theme" value="system" checked>
+              <label for="theme-system">System</label>
+            </div>
+          </div>
+        </fieldset>
+      </section>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn--primary">Save</button>
+        <button type="reset" class="btn btn--secondary">Reset</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="footer-year"></span> Portfolio Capstone</p>
+    </div>
+  </footer>
+
+  <script src="js/settings-storage.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>
