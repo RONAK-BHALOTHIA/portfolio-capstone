@@ -43,3 +43,9 @@ Help improve project structure and code quality.
 - Keep code modular.
 - Use meaningful commit messages.
 - Review code before merging.
+
+## Project Rules
+
+1. Always validate user input before saving data.
+2. Every form field must include accessible labels and keyboard support.
+3. Verify AI-generated code and test important edge cases before committing changes.
