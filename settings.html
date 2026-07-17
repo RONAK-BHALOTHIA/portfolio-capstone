@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Customize your portfolio site appearance and profile settings." />
+    <title>Settings | Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="module" src="js/settings.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-logo" href="index.html">Portfolio</a>
+        <nav aria-label="Main navigation">
+          <ul class="site-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="settings.html" aria-current="page">Settings</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <header class="page-header">
+        <h1>Settings</h1>
+        <p>Customize your portfolio profile and appearance. Changes are saved in your browser.</p>
+      </header>
+
+      <form id="settings-form" class="settings-form" novalidate>
+        <section class="settings-section" aria-labelledby="profile-heading">
+          <h2 class="settings-section__title" id="profile-heading">Profile</h2>
+
+          <div class="form-group">
+            <label for="displayName">Display name</label>
+            <input
+              type="text"
+              id="displayName"
+              name="displayName"
+              autocomplete="name"
+              maxlength="80"
+              required
+            />
+            <span class="form-hint">Shown as the main heading on your home page.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="tagline">Tagline</label>
+            <input
+              type="text"
+              id="tagline"
+              name="tagline"
+              maxlength="160"
+            />
+            <span class="form-hint">A short professional summary beneath your name.</span>
+          </div>
+        </section>
+
+        <section class="settings-section" aria-labelledby="appearance-heading">
+          <h2 class="settings-section__title" id="appearance-heading">Appearance</h2>
+
+          <div class="form-group">
+            <label for="theme">Theme</label>
+            <select id="theme" name="theme">
+              <option value="system">System default</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <div class="checkbox-group">
+              <input type="checkbox" id="animations" name="animations" />
+              <label for="animations">Enable page animations and transitions</label>
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section" aria-labelledby="contact-heading">
+          <h2 class="settings-section__title" id="contact-heading">Contact</h2>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <div class="checkbox-group">
+              <input type="checkbox" id="showEmail" name="showEmail" />
+              <label for="showEmail">Show email publicly on the home page</label>
+            </div>
+          </div>
+        </section>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn--primary">Save settings</button>
+          <button type="reset" class="btn btn--secondary">Reset to defaults</button>
+        </div>
+
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <p>Portfolio Capstone — AI Fluency Program</p>
+    </footer>
+  </body>
+</html>
